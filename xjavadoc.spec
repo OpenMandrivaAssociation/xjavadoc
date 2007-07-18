@@ -1,6 +1,6 @@
 %define name		xjavadoc
 %define version		1.1
-%define release		1.4
+%define release		1.5
 %define section		free
 %define gcj_support	1
 
@@ -22,7 +22,7 @@ BuildRequires:	junit
 BuildRequires:	ant >= 0:1.5
 BuildRequires:	jakarta-commons-logging
 BuildRequires:	jakarta-commons-collections
-BuildRequires:	xml-commons-apis
+BuildRequires:	xml-commons-jaxp-1.3-apis
 BuildRequires:	log4j
 BuildRequires:	java-devel 
 BuildRequires:	javacc
@@ -32,7 +32,7 @@ BuildRequires:	ant-junit
 BuildRequires:	ant-nodeps
 Requires:	jakarta-commons-logging
 Requires:	jakarta-commons-collections
-Requires:	xml-commons-apis
+Requires:	xml-commons-jaxp-1.3-apis
 Requires:	log4j
 Requires:	xalan-j2
 Requires:	jrefactory
@@ -77,7 +77,7 @@ javacc \
 log4j \
 commons-logging \
 commons-collections \
-xml-commons-apis \
+xml-commons-jaxp-1.3-apis \
 jrefactory \
 ant)
 
