@@ -1,6 +1,6 @@
 %define name		xjavadoc
 %define version		1.1
-%define release		1.5
+%define release		1.6
 %define section		free
 %define gcj_support	1
 
