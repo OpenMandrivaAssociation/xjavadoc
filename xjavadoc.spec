@@ -1,6 +1,6 @@
 %define name		xjavadoc
 %define version		1.1
-%define release		1.6
+%define release		1.7
 %define section		free
 %define gcj_support	1
 
@@ -37,8 +37,6 @@ Requires:	log4j
 Requires:	xalan-j2
 Requires:	jrefactory
 %if %{gcj_support}
-Requires(post): java-gcj-compat
-Requires(postun): java-gcj-compat
 BuildRequires:  java-gcj-compat-devel
 %else
 Buildarch:      noarch
