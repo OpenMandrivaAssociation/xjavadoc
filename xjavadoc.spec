@@ -1,6 +1,6 @@
 %define name		xjavadoc
 %define version		1.1
-%define release		1.7
+%define release		1.8
 %define section		free
 %define gcj_support	1
 
@@ -16,6 +16,7 @@ Source0:	%{name}-src-%{version}-RHCLEAN.tar.bz2
 # cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/xdoclet login
 # cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/xdoclet export -r XJAVADOC_1_1 xjavadoc
 Patch0:		%{name}-build_xml.patch
+BuildRequires:  java-rpmbuild
 BuildRequires:	java
 BuildRequires:	java-devel
 BuildRequires:	junit
