@@ -42,6 +42,7 @@ BuildRequires:  java-gcj-compat-devel
 %else
 Buildarch:      noarch
 %endif
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The XJavaDoc engine is a complete rewrite of Sun's 
