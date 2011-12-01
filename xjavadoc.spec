@@ -84,30 +84,30 @@ export OPT_JAR_LIST="junit ant/ant-junit ant/ant-nodeps"
 %ant -Dbuild.sysclasspath=first -Djavacchome=%{_javadir} javadoc
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_javadir}
-mkdir -p $RPM_BUILD_ROOT%{_javadocdir}
-mkdir -p $RPM_BUILD_ROOT%{_docdir}
-install -m 644 target/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_javadir}
+mkdir -p %{buildroot}%{_javadocdir}
+mkdir -p %{buildroot}%{_docdir}
+install -m 644 target/%{name}-%{version}.jar %{buildroot}%{_javadir}
 
 # version less symlinks
-(cd $RPM_BUILD_ROOT%{_javadir} && for jar in *-%{version}.jar; do ln -sf ${jar} `echo $jar| sed "s|-%{version}||g"`; done)
+(cd %{buildroot}%{_javadir} && for jar in *-%{version}.jar; do ln -sf ${jar} `echo $jar| sed "s|-%{version}||g"`; done)
 
-install -d -m 755 $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
-install -m 644 LICENSE.txt $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
-install -m 644 docs/architecture.txt $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+install -d -m 755 %{buildroot}%{_docdir}/%{name}-%{version}
+install -m 644 LICENSE.txt %{buildroot}%{_docdir}/%{name}-%{version}
+install -m 644 docs/architecture.txt %{buildroot}%{_docdir}/%{name}-%{version}
 
 #javadoc
-install -d -m 755 $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-cp -pr dist/docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name} # ghost symlink
+install -d -m 755 %{buildroot}%{_javadocdir}/%{name}-%{version}
+cp -pr dist/docs/api/* %{buildroot}%{_javadocdir}/%{name}-%{version}
+ln -s %{name}-%{version} %{buildroot}%{_javadocdir}/%{name} # ghost symlink
 
 %if %{gcj_support}
 %{_bindir}/aot-compile-rpm
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %{gcj_support}
 %post
