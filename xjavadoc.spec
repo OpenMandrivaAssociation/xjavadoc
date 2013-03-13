@@ -1,9 +1,9 @@
 %define section		free
-%define gcj_support	1
+%define gcj_support	0
 
 Name:		xjavadoc
 Version:	1.1
-Release:	1.13
+Release:	1.14
 Epoch:		0
 Summary:	The XJavaDoc engine
 License:	BSD Style
