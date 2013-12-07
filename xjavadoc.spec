@@ -3,7 +3,7 @@
 
 Name:		xjavadoc
 Version:	1.1
-Release:	1.17
+Release:	1.18
 Epoch:		0
 Summary:	The XJavaDoc engine
 License:	BSD Style
